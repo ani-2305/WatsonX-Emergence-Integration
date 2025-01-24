@@ -1,7 +1,7 @@
 # WatsonX and Emergence AI Web Orchestrator Integration
 
 ## Steps to Integrate:
-1. Clone this GitHub to get access to the 3 files locally.
+1. Clone this GitHub repository to get access to the 3 files locally.
 
 2. Upload them directly to WatsonX Orchestrate via ImportAPI to use the skills and the skill flow
 
