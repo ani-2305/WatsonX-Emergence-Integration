@@ -1,0 +1,90 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+      "title": "Emergence Polling Service",
+      "version": "1.0.0",
+      "description": "OpenAPI definition for a custom endpoint that polls Emergence status until completion."
+    },
+    "servers": [
+      {
+        "url": "https://fragrant-imported-bagel.glitch.me",
+        "description": "My Glitch Poller"
+      }
+    ],
+    "paths": {
+      "/v0/orchestrators/em-web-automation/workflows/{workflowId}/poll": {
+        "post": {
+          "operationId": "pollWorkflowUntilComplete",
+          "summary": "Poll Emergence Workflow Until Complete",
+          "description": "Internally calls Emergence 'Get Workflow Status' until success, failure, or timeout.",
+          "parameters": [
+            {
+              "name": "workflowId",
+              "in": "path",
+              "schema": { "type": "string" },
+              "required": true,
+              "description": "The workflow ID returned by Emergence after creation."
+            }
+          ],
+          "requestBody": {
+            "required": false,
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pollIntervalSeconds": {
+                      "type": "integer",
+                      "description": "Seconds to wait between Emergence status checks."
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Final workflow status or result",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object",
+                    "properties": {
+                      "workflowId": {
+                        "type": "string"
+                      },
+                      "finalStatus": {
+                        "type": "string",
+                        "description": "SUCCESS, FAILED, or TIMEOUT."
+                      },
+                      "result": {
+                        "type": "string",
+                        "description": "The final textual result from Emergence."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Server error if something goes wrong"
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "ApiKeyAuth": {
+          "type": "apiKey",
+          "in": "header",
+          "name": "apikey"
+        }
+      }
+    },
+    "security": [
+      {
+        "ApiKeyAuth": []
+      }
+    ]
+}  
