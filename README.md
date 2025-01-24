@@ -1,4 +1,4 @@
-# WatsonX x Emergence AI Web Orchestrator Integration
+# WatsonX and Emergence AI Web Orchestrator Integration
 
 ## Steps to Integrate:
 1. Clone this GitHub to get access to the 3 files locally.
