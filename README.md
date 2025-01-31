@@ -17,19 +17,21 @@
 
 8. Now, click "Add" for each. CreateEmergenceInstance and PollUntilComplete have now been added!
 
-9. Navigate back to Skills Studio and click Create, followed by ImportAPI from the dropdown.
+9. Navigate back to Skills Studio and click Create, followed by Skill flow from the dropdown.
 
-10. Upload the Emergence-WatsonX Orchestrator Workflow.json file
+10. Drag the CreateEmergenceInstance skill into the editor, followed by the PollUntilComplete skill (one after the other in the sequence)
 
-11. Click "Enhance skill", followed by "Publish"
+11. Click "Actions" in the right-hand corner, and select "Enhance skill" in the drop down
 
-12. Navigate back to the "Skills Catalog" in WatsonX Legacy Chat
+12. "Save and close", add the necessary trigger phrases, and publish the skill flow.
 
-13. Search for "Skill flows", and within Skill flows search for "Emergence"
+13. Navigate back to the "Skills Catalog" in WatsonX Legacy Chat
 
-14. Add the Emergence Web Orchestrator skill flow 
+14. Search for "Skill flows", and within Skill flows search for "Emergence"
 
-15. Navigate back to the WatsonX Legacy Chat
+15. Add the Emergence Web Orchestrator skill flow 
+
+16. Navigate back to the WatsonX Legacy Chat
 
 
 You can now use Emergence's Web Orchestrator inside of WatsonX Orchestrator! Type in commands like "I have a web-related task" or "I need Emergence", and WatsonX Orchestrate will automatically begin using Emergence's Web Orchestrator.
